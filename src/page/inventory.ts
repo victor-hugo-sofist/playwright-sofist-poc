@@ -25,7 +25,7 @@ export class accessInventoryPage {
     await expect(this.inventoryLocator.product(product)).toBeVisible();
     await this.inventoryLocator.product(product).click();
     await expect(
-      this.inventoryLocator.buttonChangeToRemove(product)
+      this.inventoryLocator.buttonChangeToRemove(product),
     ).toHaveText("Remove");
   }
 }

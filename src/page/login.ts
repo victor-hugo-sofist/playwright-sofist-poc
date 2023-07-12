@@ -26,5 +26,4 @@ export class accessLoginPage {
     await expect(this.loginLocator.loginButton()).toBeVisible();
     await this.loginLocator.loginButton().click();
   }
-
 }

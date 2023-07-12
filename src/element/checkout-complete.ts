@@ -16,10 +16,14 @@ export class saucedemoCheckoutCompleteLocator {
   }
 
   completeHeader(): Locator {
-    return this.page.locator('#checkout_complete_container').locator('.complete-header');
+    return this.page
+      .locator("#checkout_complete_container")
+      .locator(".complete-header");
   }
 
   completeText(): Locator {
-    return this.page.locator('#checkout_complete_container').locator('.complete-text');
+    return this.page
+      .locator("#checkout_complete_container")
+      .locator(".complete-text");
   }
 }

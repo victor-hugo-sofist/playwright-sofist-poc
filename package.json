@@ -8,9 +8,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.36.0"
+    "@playwright/test": "^1.36.0",
+    "prettier": "3.0.0"
   },
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.44.0",
+    "typescript": "^5.1.6"
   }
 }

@@ -5,7 +5,7 @@ import { accessCartPage } from "../src/page/cart.js";
 import { accessCheckoutOnePage } from "../src/page/checkout-step-one.js";
 import { accessCheckoutTwoPage } from "../src/page/checkout-step-two.js";
 import { accessCheckoutCompletePage } from "../src/page/checkout-complete.js";
-import 'dotenv/config'
+import "dotenv/config";
 import { website } from "../src/utils/website.js";
 import { user } from "../src/utils/user.js";
 import { person } from "../src/fixture/person.js";
@@ -14,7 +14,6 @@ import { productList } from "../src/fixture/product-list.js";
 import { selectARandomProduct } from "../src/utils/product.js";
 
 test.describe("Testes de login na página Saucedemo", () => {
-
   const websiteURL = new website(process.env.URL).homepage();
 
   let saucedemoLoginPage: accessLoginPage;
@@ -34,11 +33,15 @@ test.describe("Testes de login na página Saucedemo", () => {
   test("o usuário padrão deve conseguir fazer uma compra com sucesso", async ({
     page,
   }) => {
-
-    const customer = new user (process.env.USERNAME_STANDART_USER,process.env.PASSWORD,person.firstName.woman,person.lastName);
+    const customer = new user(
+      process.env.USERNAME_STANDART_USER,
+      process.env.PASSWORD,
+      person.firstName.woman,
+      person.lastName,
+    );
 
     await test.step("Passo 2: Inserir o Username e a Password", async () => {
-      await saucedemoLoginPage.login(customer.username,customer.password);
+      await saucedemoLoginPage.login(customer.username, customer.password);
     });
 
     await test.step(`Validação 1: A URL deve mudar para: ${websiteURL}inventory.html`, async () => {
@@ -51,7 +54,9 @@ test.describe("Testes de login na página Saucedemo", () => {
 
     await test.step("Passo 3: Escolher um produto aleatóriamente", async () => {
       saucedemoInventoryPage = new accessInventoryPage(page, websiteURL);
-      await saucedemoInventoryPage.selectProduct(selectARandomProduct(productList));
+      await saucedemoInventoryPage.selectProduct(
+        selectARandomProduct(productList),
+      );
       await saucedemoInventoryPage.clickInCart();
     });
 
@@ -62,7 +67,11 @@ test.describe("Testes de login na página Saucedemo", () => {
 
     await test.step("Passo 5: Na primeira página de checkout: Preencher os dados", async () => {
       saucedemoCheckoutOnePage = new accessCheckoutOnePage(page, websiteURL);
-      await saucedemoCheckoutOnePage.fillForm(customer.firstName, customer.lastName, customer.zipCode);
+      await saucedemoCheckoutOnePage.fillForm(
+        customer.firstName,
+        customer.lastName,
+        customer.zipCode,
+      );
       await saucedemoCheckoutOnePage.clickInContinue();
     });
 
@@ -74,12 +83,13 @@ test.describe("Testes de login na página Saucedemo", () => {
     await test.step("Passo 7: Na terceira página de checkout: Clicar em finalizar", async () => {
       saucedemoCheckoutCompletePage = new accessCheckoutCompletePage(
         page,
-        websiteURL
+        websiteURL,
       );
       const header = await saucedemoCheckoutCompletePage.getHeader();
-      const completeText = await saucedemoCheckoutCompletePage.getCompleteText();
-      expect(header).toEqual(message.buy.thanksForBuy)
-      expect(completeText).toEqual(message.buy.ordersDispatched)
+      const completeText =
+        await saucedemoCheckoutCompletePage.getCompleteText();
+      expect(header).toEqual(message.buy.thanksForBuy);
+      expect(completeText).toEqual(message.buy.ordersDispatched);
     });
   });
 });

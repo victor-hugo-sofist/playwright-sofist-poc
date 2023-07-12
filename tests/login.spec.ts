@@ -1,13 +1,11 @@
 import { test, expect } from "@playwright/test";
 import { accessLoginPage } from "../src/page/login.js";
-import 'dotenv/config'
+import "dotenv/config";
 import { website } from "../src/utils/website.js";
 import { user } from "../src/utils/user.js";
 import { person } from "../src/fixture/person.js";
 
-
 test.describe("Testes de login na página Saucedemo", () => {
-
   const websiteURL = new website(process.env.URL).homepage();
   let saucedemoLoginPage: accessLoginPage;
 
@@ -20,8 +18,13 @@ test.describe("Testes de login na página Saucedemo", () => {
 
   test("o usuário padrão deve fazer login com sucesso", async ({ page }) => {
     await test.step("Passo 2: Inserir o Username e a Password", async () => {
-      const customer = new user (process.env.USERNAME_STANDART_USER,process.env.PASSWORD,person.firstName.woman,person.lastName);
-      await saucedemoLoginPage.login(customer.username,customer.password);
+      const customer = new user(
+        process.env.USERNAME_STANDART_USER,
+        process.env.PASSWORD,
+        person.firstName.woman,
+        person.lastName,
+      );
+      await saucedemoLoginPage.login(customer.username, customer.password);
     });
 
     await test.step(`Validação 1: A URL deve mudar para: ${websiteURL}inventory.html`, async () => {
@@ -37,8 +40,13 @@ test.describe("Testes de login na página Saucedemo", () => {
     page,
   }) => {
     await test.step("Passo 2: Inserir o Username e a Password", async () => {
-      const customer = new user (process.env.USERNAME_PROBLEM_USER,process.env.PASSWORD,person.firstName.woman,person.lastName);
-      await saucedemoLoginPage.login(customer.username,customer.password);
+      const customer = new user(
+        process.env.USERNAME_PROBLEM_USER,
+        process.env.PASSWORD,
+        person.firstName.woman,
+        person.lastName,
+      );
+      await saucedemoLoginPage.login(customer.username, customer.password);
     });
 
     await test.step(`Validação 1: A URL deve mudar para: ${websiteURL}inventory.html`, async () => {
