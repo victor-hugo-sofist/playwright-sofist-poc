@@ -5,7 +5,7 @@ import { website } from "../src/utils/website.js";
 import { user } from "../src/utils/user.js";
 import { person } from "../src/fixture/person.js";
 
-test.describe("Testes de login na página Saucedemo", () => {
+test.describe("Testes de compra na página Saucedemo", () => {
   const websiteURL = new website(process.env.URL).homepage();
   let saucedemoLoginPage: accessLoginPage;
 

@@ -11,3 +11,6 @@ npm install dotenv --save
 
 # Executando o ESLint
 npx eslint
+
+# Executando o Prettier
+npx prettier . --write
