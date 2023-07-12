@@ -17,22 +17,22 @@ export class accessCheckoutOnePage {
   }
 
   async clickInContinue() {
-    await expect(this.checkoutOneLocator.getContinue()).toBeVisible();
-    await this.checkoutOneLocator.getContinue().click();
+    await expect(this.checkoutOneLocator.continue()).toBeVisible();
+    await this.checkoutOneLocator.continue().click();
   }
 
   async clickInCancel() {
-    await expect(this.checkoutOneLocator.getCancel()).toBeVisible();
-    await this.checkoutOneLocator.getCancel().click();
+    await expect(this.checkoutOneLocator.cancel()).toBeVisible();
+    await this.checkoutOneLocator.cancel().click();
   }
 
   async fillForm(firstName: string, lastName: string, postalCode: string) {
-    await expect(this.checkoutOneLocator.getFirstName()).toBeVisible();
-    await expect(this.checkoutOneLocator.getLastName()).toBeVisible();
-    await expect(this.checkoutOneLocator.getPostalCode()).toBeVisible();
+    await expect(this.checkoutOneLocator.firstName()).toBeVisible();
+    await expect(this.checkoutOneLocator.lastName()).toBeVisible();
+    await expect(this.checkoutOneLocator.postalCode()).toBeVisible();
 
-    await this.checkoutOneLocator.getFirstName().fill(firstName);
-    await this.checkoutOneLocator.getLastName().fill(lastName);
-    await this.checkoutOneLocator.getPostalCode().fill(postalCode);
+    await this.checkoutOneLocator.firstName().fill(firstName);
+    await this.checkoutOneLocator.lastName().fill(lastName);
+    await this.checkoutOneLocator.postalCode().fill(postalCode);
   }
 }

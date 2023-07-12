@@ -17,17 +17,17 @@ export class accessCartPage {
   }
 
   async clickInCheckout() {
-    await expect(this.cartLocator.getCheckout()).toBeVisible();
-    await this.cartLocator.getCheckout().click();
+    await expect(this.cartLocator.checkout()).toBeVisible();
+    await this.cartLocator.checkout().click();
   }
 
   async clickInRemove(product: string) {
-    await expect(this.cartLocator.getRemoveProduct(product)).toBeVisible();
-    await this.cartLocator.getRemoveProduct(product).click();
+    await expect(this.cartLocator.removeProduct(product)).toBeVisible();
+    await this.cartLocator.removeProduct(product).click();
   }
 
   async clickInContinueShopping() {
-    await expect(this.cartLocator.getContinueShopping()).toBeVisible();
-    await this.cartLocator.getContinueShopping().click();
+    await expect(this.cartLocator.continueShopping()).toBeVisible();
+    await this.cartLocator.continueShopping().click();
   }
 }

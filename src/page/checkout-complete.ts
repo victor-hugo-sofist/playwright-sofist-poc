@@ -17,7 +17,17 @@ export class accessCheckoutCompletePage {
   }
 
   async goHome() {
-    await expect(this.checkoutCompleteLocator.getBackHome()).toBeVisible();
-    await this.checkoutCompleteLocator.getBackHome().click();
+    await expect(this.checkoutCompleteLocator.backHome()).toBeVisible();
+    await this.checkoutCompleteLocator.backHome().click();
+  }
+
+  async getHeader(): Promise<string | null> {
+    await expect(this.checkoutCompleteLocator.completeHeader()).toBeVisible();
+    return this.checkoutCompleteLocator.completeHeader().textContent();
+  }
+
+  async getCompleteText(): Promise<string | null> {
+    await expect(this.checkoutCompleteLocator.completeText()).toBeVisible();
+    return this.checkoutCompleteLocator.completeText().textContent();
   }
 }

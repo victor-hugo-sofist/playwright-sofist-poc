@@ -7,19 +7,19 @@ export class saucedemoLoginLocator {
     this.page = page;
   }
 
-  accessSaucedemo(websiteURL: string) {
+  saucedemo(websiteURL: string) {
     return this.page.goto(websiteURL);
   }
 
-  getUserNameTextBox(): Locator {
+  userNameTextBox(): Locator {
     return this.page.getByRole("textbox", { name: "Username" });
   }
 
-  getPasswordTextBox(): Locator {
+  passwordTextBox(): Locator {
     return this.page.getByRole("textbox", { name: "Password" });
   }
 
-  getLoginButton(): Locator {
+  loginButton(): Locator {
     return this.page.getByRole("button", { name: "Login" });
   }
 }

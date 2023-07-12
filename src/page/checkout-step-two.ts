@@ -17,12 +17,12 @@ export class accessCheckoutTwoPage {
   }
 
   async clickInFinish() {
-    await expect(this.checkoutTwoLocator.getFinish()).toBeVisible();
-    await this.checkoutTwoLocator.getFinish().click();
+    await expect(this.checkoutTwoLocator.finish()).toBeVisible();
+    await this.checkoutTwoLocator.finish().click();
   }
 
   async clickInCancel() {
-    await expect(this.checkoutTwoLocator.getCancel()).toBeVisible();
-    await this.checkoutTwoLocator.getCancel().click();
+    await expect(this.checkoutTwoLocator.cancel()).toBeVisible();
+    await this.checkoutTwoLocator.cancel().click();
   }
 }

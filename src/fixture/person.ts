@@ -1,7 +1,7 @@
 export const person = {
     firstName:{
-        woman:"Maria",
+        woman:"Thereza",
         men:"Mário"
     },
-    lastName:"Omariano"
+    lastName:"Izargui"
 }

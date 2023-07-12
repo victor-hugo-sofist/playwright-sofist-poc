@@ -11,23 +11,23 @@ export class saucedemoCheckoutOneLocator {
     return this.page.goto(`${websiteURL}checkout-step-one.html`);
   }
 
-  getContinue(): Locator {
+  continue(): Locator {
     return this.page.getByRole("button", { name: "Continue" });
   }
 
-  getCancel(): Locator {
+  cancel(): Locator {
     return this.page.getByRole("button", { name: "Go back Cancel" });
   }
 
-  getFirstName(): Locator {
+  firstName(): Locator {
     return this.page.getByRole("textbox", { name: "First Name" });
   }
 
-  getLastName(): Locator {
+  lastName(): Locator {
     return this.page.getByRole("textbox", { name: "Last Name" });
   }
 
-  getPostalCode(): Locator {
+  postalCode(): Locator {
     return this.page.getByRole("textbox", { name: "Zip/Postal Code" });
   }
 }

@@ -17,13 +17,13 @@ export class accessInventoryPage {
   }
 
   async clickInCart() {
-    await expect(this.inventoryLocator.getCart()).toBeVisible();
-    await this.inventoryLocator.getCart().click();
+    await expect(this.inventoryLocator.cart()).toBeVisible();
+    await this.inventoryLocator.cart().click();
   }
 
   async selectProduct(product: string) {
-    await expect(this.inventoryLocator.getProduct(product)).toBeVisible();
-    await this.inventoryLocator.getProduct(product).click();
+    await expect(this.inventoryLocator.product(product)).toBeVisible();
+    await this.inventoryLocator.product(product).click();
     await expect(
       this.inventoryLocator.buttonChangeToRemove(product)
     ).toHaveText("Remove");

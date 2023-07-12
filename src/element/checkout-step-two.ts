@@ -11,11 +11,11 @@ export class saucedemoCheckoutTwoLocator {
     return this.page.goto(`${websiteURL}checkout-step-two.html`);
   }
 
-  getFinish(): Locator {
+  finish(): Locator {
     return this.page.getByRole("button", { name: "Finish" });
   }
 
-  getCancel(): Locator {
+  cancel(): Locator {
     return this.page.getByRole("button", { name: "Go back Cancel" });
   }
 }

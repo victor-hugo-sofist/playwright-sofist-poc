@@ -13,18 +13,18 @@ export class accessLoginPage {
   }
 
   async accessPage() {
-    await this.loginLocator.accessSaucedemo(this.websiteURL);
+    await this.loginLocator.saucedemo(this.websiteURL);
   }
 
   async login(username: string, password: string) {
-    await expect(this.loginLocator.getUserNameTextBox()).toBeVisible();
-    await this.loginLocator.getUserNameTextBox().fill(username);
+    await expect(this.loginLocator.userNameTextBox()).toBeVisible();
+    await this.loginLocator.userNameTextBox().fill(username);
 
-    await expect(this.loginLocator.getPasswordTextBox()).toBeVisible();
-    await this.loginLocator.getPasswordTextBox().fill(password);
+    await expect(this.loginLocator.passwordTextBox()).toBeVisible();
+    await this.loginLocator.passwordTextBox().fill(password);
 
-    await expect(this.loginLocator.getLoginButton()).toBeVisible();
-    await this.loginLocator.getLoginButton().click();
+    await expect(this.loginLocator.loginButton()).toBeVisible();
+    await this.loginLocator.loginButton().click();
   }
 
 }

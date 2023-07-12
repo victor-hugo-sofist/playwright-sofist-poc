@@ -11,15 +11,15 @@ export class saucedemoCartLocator {
     return this.page.goto(`${websiteURL}cart.html`);
   }
 
-  getCheckout(): Locator {
+  checkout(): Locator {
     return this.page.getByRole("button", { name: "Checkout" });
   }
 
-  getContinueShopping(): Locator {
+  continueShopping(): Locator {
     return this.page.getByRole("button", { name: "Go back Continue Shopping" });
   }
 
-  getRemoveProduct(product: string): Locator {
+  removeProduct(product: string): Locator {
     return this.page
       .locator(".cart_item")
       .filter({ hasText: product })

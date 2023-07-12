@@ -11,15 +11,15 @@ export class saucedemoInventoryLocator {
     return this.page.goto(`${websiteURL}inventory.html`);
   }
 
-  getCart() {
+  cart() {
     return this.page.locator(".shopping_cart_container");
   }
 
-  getInvetoryItemDescription(): Locator {
+  invetoryItemDescription(): Locator {
     return this.page.locator(".inventory_item_description");
   }
 
-  getProduct(product: string): Locator {
+  product(product: string): Locator {
     return this.page
       .locator(".inventory_item")
       .filter({ hasText: product })

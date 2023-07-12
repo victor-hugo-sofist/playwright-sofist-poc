@@ -11,7 +11,15 @@ export class saucedemoCheckoutCompleteLocator {
     return this.page.goto(`${websiteURL}cart.html`);
   }
 
-  getBackHome(): Locator {
+  backHome(): Locator {
     return this.page.getByRole("button", { name: "Back Home" });
+  }
+
+  completeHeader(): Locator {
+    return this.page.locator('#checkout_complete_container').locator('.complete-header');
+  }
+
+  completeText(): Locator {
+    return this.page.locator('#checkout_complete_container').locator('.complete-text');
   }
 }
