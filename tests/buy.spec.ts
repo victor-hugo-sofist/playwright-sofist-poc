@@ -1,17 +1,17 @@
 import { test, expect } from "@playwright/test";
-import { accessLoginPage } from "../src/page/login.js";
-import { accessInventoryPage } from "../src/page/inventory.js";
-import { accessCartPage } from "../src/page/cart.js";
-import { accessCheckoutOnePage } from "../src/page/checkout-step-one.js";
-import { accessCheckoutTwoPage } from "../src/page/checkout-step-two.js";
-import { accessCheckoutCompletePage } from "../src/page/checkout-complete.js";
+import { accessLoginPage } from "../src/page/login";
+import { accessInventoryPage } from "../src/page/inventory";
+import { accessCartPage } from "../src/page/cart";
+import { accessCheckoutOnePage } from "../src/page/checkout-step-one";
+import { accessCheckoutTwoPage } from "../src/page/checkout-step-two";
+import { accessCheckoutCompletePage } from "../src/page/checkout-complete";
 import "dotenv/config";
-import { website } from "../src/utils/website.js";
-import { user } from "../src/utils/user.js";
-import { person } from "../src/fixture/person.js";
-import { message } from "../src/fixture/messages.js";
-import { productList } from "../src/fixture/product-list.js";
-import { selectARandomProduct } from "../src/utils/product.js";
+import { website } from "../src/utils/website";
+import { user } from "../src/utils/user";
+import { person } from "../src/fixture/person";
+import { message } from "../src/fixture/messages";
+import { productList } from "../src/fixture/product-list";
+import { selectARandomProduct } from "../src/utils/product";
 
 test.describe("Testes de login na página Saucedemo", () => {
   const websiteURL = new website(process.env.URL).homepage();

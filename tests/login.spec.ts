@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
-import { accessLoginPage } from "../src/page/login.js";
+import { accessLoginPage } from "../src/page/login";
 import "dotenv/config";
-import { website } from "../src/utils/website.js";
-import { user } from "../src/utils/user.js";
-import { person } from "../src/fixture/person.js";
+import { website } from "../src/utils/website";
+import { user } from "../src/utils/user";
+import { person } from "../src/fixture/person";
 
 test.describe("Testes de compra na página Saucedemo", () => {
   const websiteURL = new website(process.env.URL).homepage();
