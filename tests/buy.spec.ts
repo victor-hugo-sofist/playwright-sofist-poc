@@ -13,7 +13,7 @@ import { message } from "../src/fixture/messages";
 import { productList } from "../src/fixture/product-list";
 import { selectARandomProduct } from "../src/utils/product";
 
-test.describe("Testes de login na página Saucedemo", () => {
+test.describe("Testes de compra na página Saucedemo", () => {
   const websiteURL = new website(process.env.URL).homepage();
 
   let saucedemoLoginPage: accessLoginPage;
