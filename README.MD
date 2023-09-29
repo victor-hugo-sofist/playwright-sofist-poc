@@ -8,7 +8,7 @@
 - **PRETTIER** - Padronizador estilístico
 - **ALLURE REPORT** - Relatório de execução de testes personalizado
 
-## INSTALANDO AS DEPENDÊNCIASs
+## INSTALANDO AS DEPENDÊNCIAS
 
 ### Dependências NPM
 Execute:
